@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>dy</title>
+    <style>
+    	a{
+    		color: inherit;
+    		text-decoration: none;
+    	}
+    	body{
+    		margin: 0;
+    	}
+    	*{
+    		box-sizing: border-box;
+    	}
+    
+        .clearfix:after{
+    		content:"";
+    		display: block;
+    		clear: both;
+    	}
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+  <script>
+  function calcRem(){
+	var http = document.getElementsByTagName("html")[0];
+	var w = document.documentElement.clientWidth;
+	if(w<320){
+		http.style.fontSize = "10px";
+	}else if(w<640){
+		http.style.fontSize = w/32+"px";
+	}else{
+		http.style.fontSize = "20px";
+	}
+}
+calcRem();
+window.onresize = function(){
+	calcRem();
+}
+  </script>
+</html>
